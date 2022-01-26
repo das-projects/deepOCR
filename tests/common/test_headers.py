@@ -24,7 +24,7 @@ def test_headers():
     invalid_files = []
 
     # For every python file in the repository
-    folders_to_check = [["doctr"], ["api", "app"], ["demo"], ["scripts"], ["references"]]
+    folders_to_check = [["doctr"], ["api", "app"], ["demo"], ["scripts"], ["training"]]
     for folder in folders_to_check:
         for source_path in Path(__file__).parent.parent.parent.joinpath(*folder).rglob('*.py'):
             if source_path.name not in excluded_files:

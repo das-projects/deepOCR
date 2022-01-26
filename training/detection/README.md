@@ -8,7 +8,7 @@ First, you need to install `doctr` (with pip, for instance)
 
 ```shell
 pip install -e . --upgrade
-pip install -r references/requirements.txt
+pip install -r training/requirements.txt
 ```
 
 ## Usage
@@ -16,12 +16,12 @@ pip install -r references/requirements.txt
 You can start your training in TensorFlow:
 
 ```shell
-python references/detection/train_tensorflow.py path/to/your/train_set path/to/your/val_set db_resnet50 --epochs 5
+python training/detection/train_tensorflow.py path/to/your/train_set path/to/your/val_set db_resnet50 --epochs 5
 ```
 or PyTorch:
 
 ```shell
-python references/detection/train_pytorch.py path/to/your/train_set path/to/your/val_set db_resnet50 --epochs 5 --device 0
+python training/detection/train_pytorch.py path/to/your/train_set path/to/your/val_set db_resnet50 --epochs 5 --device 0
 ```
 
 ## Data format
@@ -63,5 +63,5 @@ labels.json
 Feel free to inspect the multiple script option to customize your training to your own needs!
 
 ```shell
-python references/detection/train_tensorflow.py --help
+python training/detection/train_tensorflow.py --help
 ```

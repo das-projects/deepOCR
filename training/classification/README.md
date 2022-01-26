@@ -8,7 +8,7 @@ First, you need to install `doctr` (with pip, for instance)
 
 ```shell
 pip install -e . --upgrade
-pip install -r references/requirements.txt
+pip install -r training/requirements.txt
 ```
 
 ## Usage
@@ -16,12 +16,12 @@ pip install -r references/requirements.txt
 You can start your training in TensorFlow:
 
 ```shell
-python references/classification/train_tensorflow.py mobilenet_v3_large --epochs 5
+python training/classification/train_tensorflow.py mobilenet_v3_large --epochs 5
 ```
 or PyTorch:
 
 ```shell
-python references/classification/train_pytorch.py mobilenet_v3_large --epochs 5 --device 0
+python training/classification/train_pytorch.py mobilenet_v3_large --epochs 5 --device 0
 ```
 
 
@@ -30,5 +30,5 @@ python references/classification/train_pytorch.py mobilenet_v3_large --epochs 5 
 Feel free to inspect the multiple script option to customize your training to your own needs!
 
 ```shell
-python references/classification/train_pytorch.py --help
+python training/classification/train_pytorch.py --help
 ```

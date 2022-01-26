@@ -8,7 +8,7 @@ First, you need to install `doctr` (with pip, for instance)
 
 ```shell
 pip install -e . --upgrade
-pip install -r references/requirements.txt
+pip install -r training/requirements.txt
 ```
 
 ## Usage
@@ -16,12 +16,12 @@ pip install -r references/requirements.txt
 You can start your training in TensorFlow:
 
 ```shell
-python references/recognition/train_tensorflow.py path/to/your/train_set path/to/your/val_set crnn_vgg16_bn --epochs 5
+python training/recognition/train_tensorflow.py path/to/your/train_set path/to/your/val_set crnn_vgg16_bn --epochs 5
 ```
 or PyTorch:
 
 ```shell
-python references/recognition/train_pytorch.py path/to/your/train_set path/to/your/val_set crnn_vgg16_bn --epochs 5 --device 0
+python training/recognition/train_pytorch.py path/to/your/train_set path/to/your/val_set crnn_vgg16_bn --epochs 5 --device 0
 ```
 
 
@@ -59,5 +59,5 @@ labels = {
 Feel free to inspect the multiple script option to customize your training to your own needs!
 
 ```shell
-python references/recognition/train_pytorch.py --help
+python training/recognition/train_pytorch.py --help
 ```

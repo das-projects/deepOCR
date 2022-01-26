@@ -21,7 +21,7 @@ from collections import namedtuple
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 
 try:
-    import doctr
+    import deepocr
     DOCTR_AVAILABLE = True
 except (ImportError, NameError, AttributeError, OSError):
     DOCTR_AVAILABLE = False
