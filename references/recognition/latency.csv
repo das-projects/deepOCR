@@ -1,0 +1,12 @@
+arch,input_shape,framework,hardware,mean,std
+crnn_vgg16_bn,"(32, 128)",pytorch,cpu,687.93,93.79
+crnn_vgg16_bn,"(32, 128)",pytorch,gpu,32.34,0.25
+crnn_mobilenet_v3_small,"(32, 128)",pytorch,cpu,64.74,7.97
+crnn_mobilenet_v3_small,"(32, 128)",pytorch,gpu,8.43,0.57
+crnn_mobilenet_v3_large,"(32, 128)",pytorch,cpu,138.81,9.27
+crnn_mobilenet_v3_large,"(32, 128)",pytorch,gpu,12.93,1.1
+sar_resnet31,"(32, 128)",pytorch,cpu,,
+sar_resnet31,"(32, 128)",pytorch,gpu,256.21,1.89
+master,"(32, 128)",pytorch,cpu,,
+master,"(32, 128)",pytorch,gpu,,
+
