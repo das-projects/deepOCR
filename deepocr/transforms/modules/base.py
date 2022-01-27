@@ -24,6 +24,7 @@ class SampleCompose(NestedObject):
         >>> import numpy as np
         >>> transfos = SampleCompose([ImageTransform(ColorInversion((32, 32))), RandomRotate(30)])
         >>> out, out_boxes = transfos(torch.rand(shape=[64, 64, 3], minval=0, maxval=1), np.zeros((2, 4)))
+
     Args:
         transforms: list of transformation modules
     """
@@ -47,6 +48,7 @@ class ImageTransform(NestedObject):
         >>> import torch
         >>> transfo = ImageTransform(ColorInversion((32, 32)))
         >>> out, _ = transfo(torch.rand(shape=[64, 64, 3], minval=0, maxval=1), None)
+
     Args:
         transform: the image transformation module to wrap
     """

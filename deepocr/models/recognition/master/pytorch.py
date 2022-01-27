@@ -286,6 +286,7 @@ def master(pretrained: bool = False, **kwargs: Any) -> MASTER:
         >>> model = master(pretrained=False)
         >>> input_tensor = torch.rand((1, 3, 48, 160))
         >>> out = model(input_tensor)
+
     Args:
         pretrained (bool): If True, returns a model pre-trained on our text recognition dataset
     Returns:
