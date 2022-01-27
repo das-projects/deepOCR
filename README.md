@@ -25,20 +25,18 @@ What it does
 First, install dependencies   
 ```bash
 # clone deepOCR   
-git clone https://github.com/YourGithubName/deep-learning-project-template
+git clone https://github.com/das-projects/deepOCR
 
 # install deepOCR   
 cd deepOCR 
 pip install -e .   
-pip install -r requirements.txt
  ```   
  Next, navigate to any file and run it.   
  ```bash
 # module folder
 cd deepOCR
-
-# run module (example: mnist as your main contribution)   
-python lit_classifier_main.py    
+# run demo
+streamlit run demo/app.py    
 ```
 
 ## Imports
@@ -64,10 +62,10 @@ trainer.test(test_dataloaders=test)
 
 ### Citation   
 ```
-@article{YourName,
-  title={Your Title},
-  author={Your team},
-  journal={Location},
-  year={Year}
+@article{Arijit Das,
+  title={deep OCR: Optical Character Recognition with Deep Learning},
+  author={Arijit Das},
+  journal={https://github.com/das-projects/deepOCR},
+  year={2022}
 }
 ```   

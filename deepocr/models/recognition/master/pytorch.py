@@ -1,5 +1,5 @@
-# Copyright (C) 2021-2022, Mindee.
-
+# Copyright (C) 2022, Arijit Das.
+# Code adapted from doctr and huggingface
 # This program is licensed under the Apache License version 2.
 # See LICENSE or go to <https://www.apache.org/licenses/LICENSE-2.0.txt> for full license details.
 
@@ -40,7 +40,7 @@ class MASTER(_MASTER, nn.Module):
         feature_extractor: the backbone serving as feature extractor
         vocab: vocabulary, (without EOS, SOS, PAD)
         d_model: d parameter for the transformer decoder
-        dff: depth of the pointwise feed-forward layer
+        dff: depth of the point-wise feed-forward layer
         num_heads: number of heads for the mutli-head attention module
         num_layers: number of decoder layers to stack
         max_length: maximum length of character sequence handled by the model
@@ -282,7 +282,7 @@ def master(pretrained: bool = False, **kwargs: Any) -> MASTER:
     """MASTER as described in paper: <https://arxiv.org/pdf/1910.02562.pdf>`_.
     Example::
         >>> import torch
-        >>> from doctr.models import master
+        >>> from deepocr.models import master
         >>> model = master(pretrained=False)
         >>> input_tensor = torch.rand((1, 3, 48, 160))
         >>> out = model(input_tensor)
