@@ -24,3 +24,5 @@ tqdm>=4.30.0
 streamlit>=1.0.0
 importlib_metadata
 fastprogress>=0.1.21
+torch
+torchvision
