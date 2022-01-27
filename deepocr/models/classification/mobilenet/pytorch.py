@@ -94,7 +94,7 @@ def mobilenet_v3_small(pretrained: bool = False, **kwargs: Any) -> mobilenetv3.M
     Example::
         >>> import torch
         >>> from deepocr.models import mobilenet_v3_small
-        >>> model = mobilenetv3_small(pretrained=False)
+        >>> model = mobilenet_v3_small(pretrained=False)
         >>> input_tensor = torch.rand((1, 3, 32, 32), dtype=torch.float32)
         >>> out = model(input_tensor)
 
@@ -142,8 +142,8 @@ def mobilenet_v3_large(pretrained: bool = False, **kwargs: Any) -> mobilenetv3.M
 
     Example::
         >>> import torch
-        >>> from deepocr.models import mobilenetv3_large
-        >>> model = mobilenetv3_large(pretrained=False)
+        >>> from deepocr.models.classification.mobilenet import mobilenet_v3_large
+        >>> model = mobilenet_v3_large(pretrained=False)
         >>> input_tensor = torch.rand((1, 3, 32, 32), dtype=torch.float32)
         >>> out = model(input_tensor)
 
@@ -181,16 +181,17 @@ def mobilenet_v3_large_r(pretrained: bool = False, **kwargs: Any) -> mobilenetv3
         **kwargs
     )
 
+
 def mobilenet_v3_small_orientation(pretrained: bool = False, **kwargs: Any) -> mobilenetv3.MobileNetV3:
     """MobileNetV3-Small architecture as described in
     `"Searching for MobileNetV3",
     <https://arxiv.org/pdf/1905.02244.pdf>`_.
 
     Example::
-        >>> import tensorflow as tf
-        >>> from deepocr.models import mobilenet_v3_small_orientation
+        >>> import torch
+        >>> from deepocr.models.classification.mobilenet import mobilenet_v3_small_orientation
         >>> model = mobilenet_v3_small_orientation(pretrained=False)
-        >>> input_tensor = tf.random.uniform(shape=[1, 512, 512, 3], maxval=1, dtype=tf.float32)
+        >>> input_tensor = torch.rand(shape=[1, 512, 512, 3], maxval=1, dtype=torch.float32)
         >>> out = model(input_tensor)
 
     Args:

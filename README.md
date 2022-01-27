@@ -42,22 +42,17 @@ streamlit run demo/app.py
 ## Imports
 This project is setup as a package which means you can now easily import any file into any other file like so:
 ```python
-from deepocr.datasets.mnist import mnist
-from deepocr.lit_classifier_main import LitClassifier
+
 from pytorch_lightning import Trainer
 
 # model
-model = LitClassifier()
-
-# data
-train, val, test = mnist()
 
 # train
 trainer = Trainer()
-trainer.fit(model, train, val)
+
 
 # test using the best model!
-trainer.test(test_dataloaders=test)
+
 ```
 
 ### Citation   

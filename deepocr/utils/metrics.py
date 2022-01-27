@@ -59,7 +59,7 @@ class TextMatch:
     :math:`N` is a strictly positive integer.
 
     Example::
-        >>> from doctr.utils import TextMatch
+        >>> from deepocr.utils import TextMatch
         >>> metric = TextMatch()
         >>> metric.update(['Hello', 'world'], ['hello', 'world'])
         >>> metric.summary()
@@ -465,7 +465,7 @@ class OCRMetric:
 
     Example::
         >>> import numpy as np
-        >>> from doctr.utils import OCRMetric
+        >>> from deepocr.utils import OCRMetric
         >>> metric = OCRMetric(iou_thresh=0.5)
         >>> metric.update(np.asarray([[0, 0, 100, 100]]), np.asarray([[0, 0, 70, 70], [110, 95, 200, 150]]),
         ['hello'], ['hello', 'world'])
@@ -603,7 +603,7 @@ class DetectionMetric:
 
     Example::
         >>> import numpy as np
-        >>> from doctr.utils import DetectionMetric
+        >>> from deepocr.utils import DetectionMetric
         >>> metric = DetectionMetric(iou_thresh=0.5)
         >>> metric.update(np.asarray([[0, 0, 100, 100]]), np.asarray([[0, 0, 70, 70], [110, 95, 200, 150]]),
         np.zeros(1, dtype=np.int64), np.array([0, 1], dtype=np.int64))

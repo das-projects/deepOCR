@@ -53,7 +53,7 @@ def download_from_url(
     """Download a file using its URL
 
     Example::
-        >>> from deepocr.models import download_from_url
+        >>> from deepocr.utils import download_from_url
         >>> download_from_url("https://yoursource.com/yourcheckpoint-yourhash.zip")
 
     Args:

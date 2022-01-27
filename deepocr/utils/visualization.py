@@ -154,9 +154,9 @@ def visualize_page(
     Example::
         >>> import numpy as np
         >>> import matplotlib.pyplot as plt
-        >>> from doctr.utils.visualization import visualize_page
-        >>> from doctr.models import ocr_db_crnn
-        >>> model = ocr_db_crnn(pretrained=True)
+        >>> from deepocr.utils.visualization import visualize_page
+        >>> from deepocr.models import ocr_predictor
+        >>> model = ocr_predictor(pretrained=True)
         >>> input_page = (255 * np.random.rand(600, 800, 3)).astype(np.uint8)
         >>> out = model([[input_page]])
         >>> visualize_page(out[0].pages[0].export(), input_page)

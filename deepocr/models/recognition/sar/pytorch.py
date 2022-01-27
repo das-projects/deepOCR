@@ -308,7 +308,7 @@ def sar_resnet31(pretrained: bool = False, **kwargs: Any) -> SAR:
 
     Example:
         >>> import torch
-        >>> from doctr.models import sar_resnet31
+        >>> from deepocr.models import sar_resnet31
         >>> model = sar_resnet31(pretrained=False)
         >>> input_tensor = torch.rand((1, 3, 32, 128))
         >>> out = model(input_tensor)

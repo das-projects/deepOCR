@@ -155,9 +155,9 @@ def resnet18(pretrained: bool = False, **kwargs: Any) -> TVResNet:
 
     Example::
         >>> import torch
-        >>> from doctr.models import resnet18
+        >>> from deepocr.models import resnet18
         >>> model = resnet18(pretrained=False)
-        >>> input_tensor = torch.rand((1, 3, 224, 224), dtype=tf.float32)
+        >>> input_tensor = torch.rand((1, 3, 224, 224), dtype=torch.float32)
         >>> out = model(input_tensor)
 
     Args:
@@ -177,9 +177,9 @@ def resnet31(pretrained: bool = False, **kwargs: Any) -> ResNet:
 
     Example::
         >>> import torch
-        >>> from doctr.models import resnet31
+        >>> from deepocr.models.classification.resnet import resnet31
         >>> model = resnet31(pretrained=False)
-        >>> input_tensor = torch.rand((1, 3, 224, 224), dtype=tf.float32)
+        >>> input_tensor = torch.rand((1, 3, 224, 224), dtype=torch.float32)
         >>> out = model(input_tensor)
 
     Args:

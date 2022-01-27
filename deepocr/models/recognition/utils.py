@@ -23,10 +23,10 @@ def merge_strings(a: str, b: str, dil_factor: float) -> str:
         A merged character sequence.
 
     Example::
-        >>> from doctr.model.recognition.utils import merge_sequences
-        >>> merge_sequences('abcd', 'cdefgh', 1.4)
+        >>> from deepocr.models.recognition.utils import merge_strings
+        >>> merge_strings('abcd', 'cdefgh', 1.4)
         'abcdefgh'
-        >>> merge_sequences('abcdi', 'cdefgh', 1.4)
+        >>> merge_strings('abcdi', 'cdefgh', 1.4)
         'abcdefgh'
     """
     seq_len = min(len(a), len(b))

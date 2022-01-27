@@ -234,7 +234,7 @@ def get_os(run_lambda):
 def get_env_info():
     run_lambda = run
 
-    doctr_str = doctr.__version__ if DOCTR_AVAILABLE else 'N/A'
+    doctr_str = deepocr.__version__ if DOCTR_AVAILABLE else 'N/A'
 
     if TF_AVAILABLE:
         tf_str = tf.__version__

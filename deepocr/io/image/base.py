@@ -22,7 +22,7 @@ def read_img_as_numpy(
     """Read an image file into numpy format
 
     Example::
-        >>> from doctr.documents import read_img
+        >>> from deepocr.io.image import read_img_as_numpy as read_img
         >>> page = read_img("path/to/your/doc.jpg")
 
     Args:

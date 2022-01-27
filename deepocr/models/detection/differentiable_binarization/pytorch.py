@@ -293,7 +293,7 @@ def db_resnet34(pretrained: bool = False, **kwargs: Any) -> DBNet:
 
     Example::
         >>> import torch
-        >>> from doctr.models import db_resnet34
+        >>> from deepocr.models import db_resnet34
         >>> model = db_resnet34(pretrained=True)
         >>> input_tensor = torch.rand((1, 3, 1024, 1024), dtype=torch.float32)
         >>> out = model(input_tensor)
@@ -321,7 +321,7 @@ def db_resnet50(pretrained: bool = False, **kwargs: Any) -> DBNet:
 
     Example::
         >>> import torch
-        >>> from doctr.models import db_resnet50
+        >>> from deepocr.models import db_resnet50
         >>> model = db_resnet50(pretrained=True)
         >>> input_tensor = torch.rand((1, 3, 1024, 1024), dtype=torch.float32)
         >>> out = model(input_tensor)
@@ -349,7 +349,7 @@ def db_mobilenet_v3_large(pretrained: bool = False, **kwargs: Any) -> DBNet:
 
     Example::
         >>> import torch
-        >>> from doctr.models import db_mobilenet_v3_large
+        >>> from deepocr.models import db_mobilenet_v3_large
         >>> model = db_mobilenet_v3_large(pretrained=True)
         >>> input_tensor = torch.rand((1, 3, 1024, 1024), dtype=torch.float32)
         >>> out = model(input_tensor)
@@ -378,7 +378,7 @@ def db_resnet50_rotation(pretrained: bool = False, **kwargs: Any) -> DBNet:
 
     Example::
         >>> import torch
-        >>> from doctr.models import db_resnet50_rotation
+        >>> from deepocr.models import db_resnet50_rotation
         >>> model = db_resnet50_rotation(pretrained=True)
         >>> input_tensor = torch.rand((1, 3, 1024, 1024), dtype=torch.float32)
         >>> out = model(input_tensor)
