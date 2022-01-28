@@ -69,6 +69,18 @@ synthetic_pages = result.synthesize()
 plt.imshow(synthetic_pages[0]); plt.axis('off'); plt.show()
 ```
 
+## Models architecture reference
+
+### Text Detection
+- DBNet: [Real-time Scene Text Detection with Differentiable Binarization](https://arxiv.org/pdf/1911.08947.pdf).
+- LinkNet: [LinkNet: Exploiting Encoder Representations for Efficient Semantic Segmentation](https://arxiv.org/pdf/1707.03718.pdf)
+
+### Text Recognition
+- CRNN: [An End-to-End Trainable Neural Network for Image-based Sequence Recognition and Its Application to Scene Text Recognition](https://arxiv.org/pdf/1507.05717.pdf).
+- SAR: [Show, Attend and Read:A Simple and Strong Baseline for Irregular Text Recognition](https://arxiv.org/pdf/1811.00751.pdf).
+- MASTER: [MASTER: Multi-Aspect Non-local Network for Scene Text Recognition](https://arxiv.org/pdf/1910.02562.pdf).
+
+
 ### Citation   
 ```
 @article{Arijit Das,
