@@ -59,7 +59,8 @@ print(f"Number of pages: {len(doc)}")
 
 # Use the predictor object to detect and recognize text
 predictor = ocr_predictor(pretrained=True)
-# test using the best model!
+
+# show the predictor output!
 result = predictor(doc)
 result.show(doc)
 
