@@ -3,8 +3,6 @@
 # DeepOCR     
 
 [![Paper](http://img.shields.io/badge/paper-arxiv.1001.2234-B31B1B.svg)](https://www.nature.com/articles/nature14539)
-[![Conference](http://img.shields.io/badge/NeurIPS-2019-4b44ce.svg)](https://papers.nips.cc/book/advances-in-neural-information-processing-systems-31-2018)
-[![Conference](http://img.shields.io/badge/ICLR-2019-4b44ce.svg)](https://papers.nips.cc/book/advances-in-neural-information-processing-systems-31-2018)
 [![Conference](http://img.shields.io/badge/AnyConference-year-4b44ce.svg)](https://papers.nips.cc/book/advances-in-neural-information-processing-systems-31-2018)  
 <!--
 ARXIV   
@@ -18,8 +16,10 @@ Conference
 -->   
 </div>
  
-## Description   
-What it does   
+## Description    
+This is an Optical Character Recognition Library with the ability to train and deploy Deep Neural Network models 
+to a Streamlit Web application. The base library in written using PyTorch and PyTorch-Lightning, while the dashboard was 
+developed using the Streamlit library.  
 
 ## How to run   
 First, install dependencies   
@@ -29,30 +29,43 @@ git clone https://github.com/das-projects/deepOCR
 
 # install deepOCR   
 cd deepOCR 
-pip install -e .   
+pip install -e .  
+sudo apt-get install fonts-freefont-ttf -y 
  ```   
- Next, navigate to any file and run it.   
+## Streamlit Webapp
+ Next, try out the streamlit dashboard for a demonstration   
  ```bash
-# module folder
+# demo folder
 cd deepOCR
 # run demo
 streamlit run demo/app.py    
 ```
 
-## Imports
-This project is setup as a package which means you can now easily import any file into any other file like so:
+## Python code API
+This project is setup as a package which means you can now easily import any file into any other file:
+```bash
+# Download an example image
+wget https://eforms.com/download/2019/01/Cash-Payment-Receipt-Template.pdf
+```
 ```python
+import matplotlib.pyplot as plt
 
-from pytorch_lightning import Trainer
+from deepocr.io import DocumentFile
+from deepocr.models import ocr_predictor
 
-# model
+# Load the pdf file
+doc = DocumentFile.from_pdf("Cash-Payment-Receipt-Template.pdf").as_images()
+print(f"Number of pages: {len(doc)}")
 
-# train
-trainer = Trainer()
-
-
+# Use the predictor object to detect and recognize text
+predictor = ocr_predictor(pretrained=True)
 # test using the best model!
+result = predictor(doc)
+result.show(doc)
 
+# Use synthesize method to regenerate the image in a desired format 
+synthetic_pages = result.synthesize()
+plt.imshow(synthetic_pages[0]); plt.axis('off'); plt.show()
 ```
 
 ### Citation   
