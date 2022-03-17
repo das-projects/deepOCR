@@ -137,7 +137,7 @@ def main(args):
 
 def parse_args():
     import argparse
-    parser = argparse.ArgumentParser(description='docTR evaluation script for text detection (PyTorch)',
+    parser = argparse.ArgumentParser(description='deepOCR evaluation script for text detection',
                                      formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 
     parser.add_argument('arch', type=str, help='text-detection model to evaluate')

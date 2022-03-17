@@ -1,10 +1,10 @@
 # Character classification
 
-The sample training script was made to train a character classification model with docTR.
+The sample training script was made to train a character classification model with deepOCR.
 
 ## Setup
 
-First, you need to install `doctr` (with pip, for instance)
+First, you need to install `deepOCR` (with pip, for instance)
 
 ```shell
 pip install -e . --upgrade
@@ -13,21 +13,13 @@ pip install -r training/requirements.txt
 
 ## Usage
 
-You can start your training in TensorFlow:
-
-```shell
-python training/classification/train_tensorflow.py mobilenet_v3_large --epochs 5
-```
-or PyTorch:
+You can start your training in PyTorch:
 
 ```shell
 python training/classification/train_pytorch.py mobilenet_v3_large --epochs 5 --device 0
 ```
 
-
-## Advanced options
-
-Feel free to inspect the multiple script option to customize your training to your own needs!
+For help with other available options
 
 ```shell
 python training/classification/train_pytorch.py --help

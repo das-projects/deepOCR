@@ -13,12 +13,7 @@ pip install -r training/requirements.txt
 
 ## Usage
 
-You can start your training in TensorFlow:
-
-```shell
-python training/detection/train_tensorflow.py path/to/your/train_set path/to/your/val_set db_resnet50 --epochs 5
-```
-or PyTorch:
+You can start your training in PyTorch:
 
 ```shell
 python training/detection/train_pytorch.py path/to/your/train_set path/to/your/val_set db_resnet50 --epochs 5 --device 0
@@ -58,9 +53,7 @@ labels.json
 }
 ```
 
-## Advanced options
-
-Feel free to inspect the multiple script option to customize your training to your own needs!
+For further options call help!
 
 ```shell
 python training/detection/train_tensorflow.py --help

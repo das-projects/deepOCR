@@ -29,14 +29,14 @@ from utils import plot_recorder, plot_samples
 
 
 def record_lr(
-    model: torch.nn.Module,
-    train_loader: DataLoader,
-    batch_transforms,
-    optimizer,
-    start_lr: float = 1e-7,
-    end_lr: float = 1,
-    num_it: int = 100,
-    amp: bool = False,
+        model: torch.nn.Module,
+        train_loader: DataLoader,
+        batch_transforms,
+        optimizer,
+        start_lr: float = 1e-7,
+        end_lr: float = 1,
+        num_it: int = 100,
+        amp: bool = False,
 ):
     """Gridsearch the optimal learning rate for the training.
     Adapted from https://github.com/frgfm/Holocron/blob/master/holocron/trainer/core.py
@@ -100,7 +100,6 @@ def record_lr(
 
 
 def fit_one_epoch(model, train_loader, batch_transforms, optimizer, scheduler, mb, amp=False):
-
     if amp:
         scaler = torch.cuda.amp.GradScaler()
 
@@ -166,7 +165,6 @@ def evaluate(model, val_loader, batch_transforms, amp=False):
 
 
 def main(args):
-
     print(args)
 
     if not isinstance(args.workers, int):
@@ -281,7 +279,8 @@ def main(args):
         return
     # Scheduler
     if args.sched == 'cosine':
-        scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, args.epochs * len(train_loader), eta_min=args.lr / 25e4)
+        scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, args.epochs * len(train_loader),
+                                                               eta_min=args.lr / 25e4)
     elif args.sched == 'onecycle':
         scheduler = torch.optim.lr_scheduler.OneCycleLR(optimizer, args.lr, args.epochs * len(train_loader))
 
@@ -291,7 +290,6 @@ def main(args):
 
     # W&B
     if args.wb:
-
         run = wandb.init(
             name=exp_name,
             project="character-classification",
@@ -337,9 +335,8 @@ def main(args):
 
 def parse_args():
     import argparse
-    parser = argparse.ArgumentParser(description='DocTR training script for character classification (PyTorch)',
+    parser = argparse.ArgumentParser(description='deepOCR training script for character classification',
                                      formatter_class=argparse.ArgumentDefaultsHelpFormatter)
-
     parser.add_argument('arch', type=str, help='text-recognition model to train')
     parser.add_argument('--name', type=str, default=None, help='Name of your training experiment')
     parser.add_argument('--epochs', type=int, default=10, help='number of epochs to train the model on')

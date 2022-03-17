@@ -96,8 +96,8 @@ def main():
                 cols_image[3].image(img, clamp=True)
 
                 # Display JSON
-                # st.markdown("\nHere are your analysis results in JSON format:")
-                # st.json(page_export)
+                #st.markdown("\nHere are your analysis results in JSON format:")
+                #st.json(page_export)
 
 
 if __name__ == '__main__':
