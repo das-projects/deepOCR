@@ -10,29 +10,38 @@ os.environ["TF_CPP_MIN_LOG_LEVEL"] = "2"
 
 from deepocr.io import DocumentFile
 from deepocr.models import ocr_predictor
+import time
+import glob
 
 
 def main(args):
 
     model = ocr_predictor(args.detection, args.recognition, pretrained=True)
 
+    file_paths = glob.glob(args.path + "/*.png")
+    print(len(file_paths))
+
     if args.path.endswith(".pdf"):
-        doc = DocumentFile.from_pdf(args.path).as_images()
+        doc = DocumentFile.from_pdf(file_paths).as_images()
     else:
-        doc = DocumentFile.from_images(args.path)
+        doc = DocumentFile.from_images(file_paths)
 
+    t0 = time.perf_counter()
     out = model(doc)
+    t1 = time.perf_counter()
+    print("Time taken: ", t1 - t0)
 
-    for page, img in zip(out.pages, doc):
-        page.show(img, block=not args.noblock, interactive=not args.static)
+    # for page, img in zip(out.pages, doc):
+    # page.show(img, block=not args.noblock, interactive=not args.static)
+
 
 
 def parse_args():
     import argparse
-    parser = argparse.ArgumentParser(description='DocTR end-to-end analysis',
+    parser = argparse.ArgumentParser(description='deepOCR end-to-end analysis',
                                      formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 
-    parser.add_argument('path', type=str, help='Path to the input document (PDF or image)')
+    parser.add_argument('--path', type=str, help='Path to the input document (PDF or image)')
     parser.add_argument('--detection', type=str, default='db_resnet50',
                         help='Text detection model to use for analysis')
     parser.add_argument('--recognition', type=str, default='crnn_vgg16_bn',

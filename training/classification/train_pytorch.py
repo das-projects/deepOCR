@@ -14,6 +14,8 @@ import time
 
 import numpy as np
 import torch
+import torch.nn as nn
+import pytorch_lightning as pl
 import wandb
 from fastprogress.fastprogress import master_bar, progress_bar
 from torch.nn.functional import cross_entropy
@@ -168,7 +170,7 @@ def main(args):
     print(args)
 
     if not isinstance(args.workers, int):
-        args.workers = min(16, mp.cpu_count())
+        args.workers = mp.cpu_count()
 
     torch.backends.cudnn.benchmark = True
 

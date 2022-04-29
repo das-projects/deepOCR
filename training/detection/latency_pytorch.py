@@ -51,7 +51,7 @@ def main(args):
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='docTR latency benchmark for text detection (PyTorch)',
+    parser = argparse.ArgumentParser(description='deepOCR latency benchmark for text detection',
                                      formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     parser.add_argument("arch", type=str, help="Architecture to use")
     parser.add_argument("--size", type=int, default=1024, help="The image input size")

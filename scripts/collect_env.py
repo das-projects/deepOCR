@@ -22,15 +22,9 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 
 try:
     import deepocr
-    DOCTR_AVAILABLE = True
+    DEEPOCR_AVAILABLE = True
 except (ImportError, NameError, AttributeError, OSError):
-    DOCTR_AVAILABLE = False
-
-try:
-    import tensorflow as tf
-    TF_AVAILABLE = True
-except (ImportError, NameError, AttributeError, OSError):
-    TF_AVAILABLE = False
+    DEEPOCR_AVAILABLE = False
 
 try:
     import torch
@@ -56,7 +50,6 @@ PY3 = sys.version_info >= (3, 0)
 # System Environment Information
 SystemEnv = namedtuple('SystemEnv', [
     'doctr_version',
-    'tf_version',
     'torch_version',
     'torchvision_version',
     'cv2_version',
@@ -113,10 +106,6 @@ def get_nvidia_driver_version(run_lambda):
 
 
 def get_gpu_info(run_lambda):
-    if get_platform() == 'darwin':
-        if TF_AVAILABLE and any(tf.config.list_physical_devices('GPU')):
-            return tf.config.list_physical_devices('GPU')[0].name
-        return None
     smi = get_nvidia_smi()
     uuid_regex = re.compile(r' \(UUID: .+?\)')
     rc, out, _ = run_lambda(smi + ' -L')
@@ -234,13 +223,7 @@ def get_os(run_lambda):
 def get_env_info():
     run_lambda = run
 
-    doctr_str = deepocr.__version__ if DOCTR_AVAILABLE else 'N/A'
-
-    if TF_AVAILABLE:
-        tf_str = tf.__version__
-        tf_cuda_available_str = any(tf.config.list_physical_devices('GPU'))
-    else:
-        tf_str = tf_cuda_available_str = 'N/A'
+    deepocr_str = deepocr.__version__ if DEEPOCR_AVAILABLE else 'N/A'
 
     if TORCH_AVAILABLE:
         torch_str = torch.__version__
@@ -253,13 +236,12 @@ def get_env_info():
     cv2_str = cv2.__version__ if CV2_AVAILABLE else 'N/A'
 
     return SystemEnv(
-        doctr_version=doctr_str,
+        doctr_version=deepocr_str,
         tf_version=tf_str,
         torch_version=torch_str,
         torchvision_version=tv_str,
         cv2_version=cv2_str,
         python_version=".".join(map(str, sys.version_info[:3])),
-        is_cuda_available_tf=tf_cuda_available_str,
         is_cuda_available_torch=torch_cuda_available_str,
         cuda_runtime_version=get_running_cuda_version(run_lambda),
         nvidia_gpu_models=get_gpu_info(run_lambda),
@@ -276,7 +258,6 @@ PyTorch version: {torch_version} (torchvision {torchvision_version})
 OpenCV version: {cv2_version}
 OS: {os}
 Python version: {python_version}
-Is CUDA available (TensorFlow): {is_cuda_available_tf}
 Is CUDA available (PyTorch): {is_cuda_available_torch}
 CUDA runtime version: {cuda_runtime_version}
 GPU models and configuration: {nvidia_gpu_models}

@@ -332,7 +332,7 @@ def main(args):
 
 def parse_args():
     import argparse
-    parser = argparse.ArgumentParser(description='DocTR training script for object detection (PyTorch)',
+    parser = argparse.ArgumentParser(description='deepOCR training script for object detection',
                                      formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     parser.add_argument('arch', type=str, help='text-detection model to train')
     parser.add_argument('--name', type=str, default=None, help='Name of your training experiment')

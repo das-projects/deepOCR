@@ -56,5 +56,5 @@ labels.json
 For further options call help!
 
 ```shell
-python training/detection/train_tensorflow.py --help
+python training/detection/train_pytorch.py --help
 ```

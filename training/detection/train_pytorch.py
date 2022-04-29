@@ -357,7 +357,7 @@ def main(args):
 
 def parse_args():
     import argparse
-    parser = argparse.ArgumentParser(description='DocTR training script for text detection (PyTorch)',
+    parser = argparse.ArgumentParser(description='deepOCR training script for text detection',
                                      formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 
     parser.add_argument('train_path', type=str, help='path to training data folder')
