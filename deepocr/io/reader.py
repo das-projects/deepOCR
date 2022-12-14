@@ -38,21 +38,21 @@ class DocumentFile:
 
         return PDF(doc)
 
-    @classmethod
-    def from_url(cls, url: str, **kwargs) -> PDF:
-        """Interpret a web page as a PDF document
-
-        Example::
-            >>> from deepocr.io import DocumentFile
-            >>> doc = DocumentFile.from_url("https://www.yoursite.com")
-
-        Args:
-            url: the URL of the target web page
-        Returns:
-            a PDF document
-        """
-        pdf_stream = read_html(url)
-        return cls.from_pdf(pdf_stream, **kwargs)
+    # @classmethod
+    # def from_url(cls, url: str, **kwargs) -> PDF:
+    #     """Interpret a web page as a PDF document
+    #
+    #     Example::
+    #         >>> from deepocr.io import DocumentFile
+    #         >>> doc = DocumentFile.from_url("https://www.yoursite.com")
+    #
+    #     Args:
+    #         url: the URL of the target web page
+    #     Returns:
+    #         a PDF document
+    #     """
+    #     pdf_stream = read_html(url)
+    #     return cls.from_pdf(pdf_stream, **kwargs)
 
     @classmethod
     def from_images(cls, files: Union[Sequence[AbstractFile], AbstractFile], **kwargs) -> List[np.ndarray]:

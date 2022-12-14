@@ -32,10 +32,10 @@ def parse_args():
     parser = argparse.ArgumentParser(description='DocTR end-to-end analysis',
                                      formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 
-    parser.add_argument('path', type=str, help='Path to the input document (PDF or image)')
+    parser.add_argument('--path', default='/Users/raphaelkronberg/PycharmProjects/torc/data/PDF1.pdf', type=str, help='Path to the input document (PDF or image)')
     parser.add_argument('--detection', type=str, default='db_resnet50',
                         help='Text detection model to use for analysis')
-    parser.add_argument('--recognition', type=str, default='crnn_vgg16_bn',
+    parser.add_argument('--recognition', type=str, default='parseq',
                         help='Text recognition model to use for analysis')
     parser.add_argument("--noblock", dest="noblock", help="Disables blocking visualization. Used only for CI.",
                         action="store_true")
