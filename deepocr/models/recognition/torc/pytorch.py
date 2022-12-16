@@ -110,7 +110,7 @@ class TORCPostProcessor(RecognitionPostProcessor):
 
 class TOCR(RecognitionModel, nn.Module):
     """
-    Implements a different architecture as described in `"Scene Text Recognition with Permuted
+    Implements architectures as described in `"Scene Text Recognition with Permuted
      Autoregressive Sequence Models" <https://doi.org/10.1007/978-3-031-19815-1_11>`.
 
     Args:
