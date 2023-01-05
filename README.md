@@ -79,13 +79,15 @@ plt.imshow(synthetic_pages[0]); plt.axis('off'); plt.show()
 - CRNN: [An End-to-End Trainable Neural Network for Image-based Sequence Recognition and Its Application to Scene Text Recognition](https://arxiv.org/pdf/1507.05717.pdf).
 - SAR: [Show, Attend and Read:A Simple and Strong Baseline for Irregular Text Recognition](https://arxiv.org/pdf/1811.00751.pdf).
 - MASTER: [MASTER: Multi-Aspect Non-local Network for Scene Text Recognition](https://arxiv.org/pdf/1910.02562.pdf).
+- ViTSTR: [MASTER: Scene Text Recognition with
+Permuted Autoregressive Sequence Models](https://arxiv.org/pdf/2207.06966.pdf).
 
 
 ### Citation   
 ```
-@article{Arijit Das,
+@article{Arijit Das, Raphael Kronberg
   title={deep OCR: Optical Character Recognition with Deep Learning},
-  author={Arijit Das},
+  author={Arijit Das, Raphael Kronberg},
   journal={https://github.com/das-projects/deepOCR},
   year={2022}
 }

@@ -5,7 +5,7 @@
 
 from typing import Any
 
-from weasyprint import HTML
+#from weasyprint import HTML
 
 __all__ = ['read_html']
 

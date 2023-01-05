@@ -18,7 +18,8 @@ from deepocr.models import ocr_predictor
 from deepocr.utils.visualization import visualize_page
 
 DET_ARCHS = ["db_resnet50", "db_mobilenet_v3_large"]
-RECO_ARCHS = ["crnn_vgg16_bn", "crnn_mobilenet_v3_small", "master", "sar_resnet31"]
+RECO_ARCHS = ["crnn_vgg16_bn", "crnn_mobilenet_v3_small", "master",
+              "sar_resnet31", "abinet", "trba", "vitstr", "parseq_tiny", "parseq"]
 
 
 def main():
